@@ -1,0 +1,206 @@
+/* src/App.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@300;400;700&display=swap');
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  cursor: url(https://ani.cursors-4u.net/movie/mov-2/mov138.cur), auto !important;
+}
+
+button:hover {
+  background-color: #e67e22;
+  color: #fff;
+  animation: wobble 0.5s;
+}
+
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #fad0c4 50%, #ff9a9e 75%, #ff9a9e 100%);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #2c3e50;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #e74c3c;
+  text-shadow: 2px 2px #ecf0f1;
+}
+
+h2 {
+  color: #8e44ad;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+a {
+  color: #3498db;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+input[type='text'] {
+  padding: 15px;
+  width: 60%;
+  font-size: 16px;
+  border: 2px solid #9b59b6;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+input[type='text']:focus {
+  border-color: #e74c3c;
+}
+
+button {
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #f1c40f;
+  color: #2c3e50;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.3s ease;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+/* Bucket List Styles */
+.bucketlist {
+  text-align: left;
+}
+
+.bucketlist ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bucketlist li {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px 0;
+  padding: 15px 20px;
+  border-left: 10px solid #3498db;
+  border-radius: 5px;
+  position: relative;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.bucketlist li:nth-child(even) {
+  border-left-color: #e74c3c;
+}
+
+.bucketlist li button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background-color: transparent;
+  color: #e74c3c;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.bucketlist li button:hover {
+  color: #c0392b;
+}
+
+/* Random Joke Styles */
+.random-activity {
+  margin-bottom: 40px;
+}
+
+.random-activity button {
+  margin-bottom: 20px;
+}
+
+.random-activity .joke-details {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-left: 10px solid #2ecc71;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.random-activity .joke-details p {
+  margin: 10px 0;
+}
+
+.random-activity .joke-details a {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.random-activity .joke-details a:hover {
+  text-decoration: underline;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  input[type='text'] {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+  }
+}
